@@ -82,8 +82,8 @@ const NetworkRequestsPieChart = ({ networkRequestsData }) => {
   };
 
   return (
-    <div>
-      <canvas ref={chartRef} width="100%" height="auto"></canvas>
+    <div class="chart-container">
+      <canvas ref={chartRef} width="100%" height="200px"></canvas>
     </div>
   );
 };

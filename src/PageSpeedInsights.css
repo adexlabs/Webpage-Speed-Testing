@@ -158,3 +158,11 @@ h2 {
   grid-template-columns: 1fr 1fr;
   gap:30px;
 }
+
+@media screen and (max-width: 767px) {
+.result-section.custom-pie-chart-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+}
