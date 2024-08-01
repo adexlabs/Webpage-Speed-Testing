@@ -26,11 +26,11 @@ import UsesPassiveEventListenersResults from './UsesPassiveEventListenersResults
 import UsesOptimizedImagesResults from './UsesOptimizedImagesResults';
 import TotalByteWeightResults from './TotalByteWeightResults';
 import LongTasksResults from './LongTasksResults';
-import LayoutShiftElementsResults from './LayoutShiftElementsResults';
+//import LayoutShiftElementsResults from './LayoutShiftElementsResults';
 import UserTimingsData from './UserTimingsData';
 import ServerResponseTimeData from './ServerResponseTimeData';
 import AvoidRedirectsResults from './AvoidRedirectsResults';
-import UsesRelPreloadResults from './UsesRelPreloadResults';
+//import UsesRelPreloadResults from './UsesRelPreloadResults';
 import EfficientAnimatedContentResults from './EfficientAnimatedContentResults';
 import DuplicatedJavascriptResults from './DuplicatedJavascriptResults';
 import ThirdPartyFacadesResults from './ThirdPartyFacadesResults';
@@ -75,12 +75,12 @@ const PageSpeedInsights = () => {
   const [usesOptimizedImagesData, setUsesOptimizedImagesData] = useState({});
   const [totalByteWeightData, setTotalByteWeightData] = useState({});  
   const [longTasksData, setLongTasksData] = useState({});
-  const [layoutShiftElementsData, setLayoutShiftElementsData] = useState({});
+  //const [layoutShiftElementsData, setLayoutShiftElementsData] = useState({});
   const [userTimingsData, setUserTimingsData] = useState({});
   const [serverResponseTimeData, setServerResponseTimeData] = useState({});
-  const [criticalRequestChainsData, setCriticalRequestChainsData] = useState({});
+  //const [criticalRequestChainsData, setCriticalRequestChainsData] = useState({});
   const [avoidRedirectsData, setAvoidRedirectsData] = useState({});
-  const [usesRelPreloadData, setUsesRelPreloadData] = useState({});
+  //const [usesRelPreloadData, setUsesRelPreloadData] = useState({});
   const [efficientAnimatedContentData, setEfficientAnimatedContentData] = useState({});
   const [duplicatedJavascriptData, setDuplicatedJavascriptData] = useState({});
   const [thirdPartyFacadesData, setThirdPartyFacadesData] = useState({});
@@ -96,7 +96,7 @@ const PageSpeedInsights = () => {
   const [selectedTab, setSelectedTab] = useState("All");
    
 
-  const apiKey = "AIzaSyCgLTE5Sm-MgiDXriiKbAWGnWSUqyh-Xr4";
+  const apiKey = "AIzaSyCdLrXZ60ygA3MnE_XpyTietE6VL_VPwVg";
   
   const calculateCO2ePerNewVisit = (totalByteWeight) => {
 
@@ -135,12 +135,12 @@ const PageSpeedInsights = () => {
     { Component: UsesOptimizedImagesResults, data: usesOptimizedImagesData, title: "Efficiently encode images", tags: []  },
     { Component: TotalByteWeightResults, data: totalByteWeightData, title: "Avoid enormous network payloads", tags: ["LCP"]  },
     { Component: LongTasksResults, data: longTasksData, title: "Avoid long main-thread tasks", tags: ["TBT"]  },
-    { Component: LayoutShiftElementsResults, data: layoutShiftElementsData, title: "Avoid large layout shifts" , tags: ["CLS"] },
+    //{ Component: LayoutShiftElementsResults, data: layoutShiftElementsData, title: "Avoid large layout shifts" , tags: ["CLS"] },
     { Component: UserTimingsData, data: userTimingsData, title: "User Timing marks and measures", tags: []  },
     { Component: ServerResponseTimeData, data: serverResponseTimeData, title: "Server Response Time", tags: ["FCP", "LCP"]  },
-    { data: criticalRequestChainsData, title: "Avoid chaining critical requests", tags: ["FCP", "LCP"] },
+    //{ data: criticalRequestChainsData, title: "Avoid chaining critical requests", tags: ["FCP", "LCP"] },
     { Component: AvoidRedirectsResults, data: avoidRedirectsData, title: "Avoid multiple page redirects", tags: ["FCP", "LCP"] },
-    { Component: UsesRelPreloadResults, data: usesRelPreloadData, title: "Preload key requests", tags: ["FCP", "LCP"]  },
+    //{ Component: UsesRelPreloadResults, data: usesRelPreloadData, title: "Preload key requests", tags: ["FCP", "LCP"]  },
     { Component: EfficientAnimatedContentResults, data: efficientAnimatedContentData, title: "Use video formats for animated content", tags: ["LCP"]  },
     { Component: DuplicatedJavascriptResults, data: duplicatedJavascriptData, title: "Remove duplicate modules in JavaScript bundles", tags: ["TBT"]  },
     { Component: ThirdPartyFacadesResults, data: thirdPartyFacadesData, title: "Lazy load third-party resources with facades", tags: ["TBT"]  },
@@ -643,23 +643,23 @@ setLongTasksData(longTasks);
 
 
 // Display information for "layout-shift-elements"
-const layoutShiftElementsData = lighthouseData.audits["layout-shift-elements"];
-console.log(layoutShiftElementsData);
+// const layoutShiftElementsData = lighthouseData.audits["layout-shift-elements"];
+// console.log(layoutShiftElementsData);
 
 // Extract information from layout-shift-elements
-const layoutShiftElements = {
-  title: layoutShiftElementsData.title,
-  description: layoutShiftElementsData.description,
-  score: layoutShiftElementsData.score,
-  scoreDisplayMode: layoutShiftElementsData.scoreDisplayMode,
-  displayValue: layoutShiftElementsData.displayValue,
-  numericValue: layoutShiftElementsData.numericValue,
-  numericUnit: layoutShiftElementsData.numericUnit,
-  details: layoutShiftElementsData.details,
-};
+// const layoutShiftElements = {
+//   title: layoutShiftElementsData.title,
+//   description: layoutShiftElementsData.description,
+//   score: layoutShiftElementsData.score,
+//   scoreDisplayMode: layoutShiftElementsData.scoreDisplayMode,
+//   displayValue: layoutShiftElementsData.displayValue,
+//   numericValue: layoutShiftElementsData.numericValue,
+//   numericUnit: layoutShiftElementsData.numericUnit,
+//   details: layoutShiftElementsData.details,
+// };
 
 
-setLayoutShiftElementsData(layoutShiftElements);
+// setLayoutShiftElementsData(layoutShiftElements);
 
 
 // Display information for "user-timings"
@@ -700,20 +700,20 @@ setServerResponseTimeData(serverResponseTime);
 
 
 // Display information for "critical-request-chains"
-const criticalRequestChainsData = lighthouseData.audits["critical-request-chains"];
-console.log(criticalRequestChainsData);
+// const criticalRequestChainsData = lighthouseData.audits["critical-request-chains"];
+// console.log(criticalRequestChainsData);
 
 // Extract information from critical-request-chains
-const criticalRequestChains = {
-  title: criticalRequestChainsData.title,
-  description: criticalRequestChainsData.description,
-  score: criticalRequestChainsData.score,
-  scoreDisplayMode: criticalRequestChainsData.scoreDisplayMode,
-  displayValue: criticalRequestChainsData.displayValue,
-  details: criticalRequestChainsData.details,
-};
+// const criticalRequestChains = {
+//   title: criticalRequestChainsData.title,
+//   description: criticalRequestChainsData.description,
+//   score: criticalRequestChainsData.score,
+//   scoreDisplayMode: criticalRequestChainsData.scoreDisplayMode,
+//   displayValue: criticalRequestChainsData.displayValue,
+//   details: criticalRequestChainsData.details,
+// };
 
-setCriticalRequestChainsData(criticalRequestChains);
+// setCriticalRequestChainsData(criticalRequestChains);
 
 
 
@@ -757,22 +757,22 @@ setAvoidRedirectsData(avoidRedirects);
 
 
 // Display information for "uses-rel-preload"
-const usesRelPreloadData = lighthouseData.audits["uses-rel-preload"];
-console.log(usesRelPreloadData);
+// const usesRelPreloadData = lighthouseData.audits["uses-rel-preload"];
+// console.log(usesRelPreloadData);
 
 // Extract information from uses-rel-preload
-const usesRelPreload = {
-  title: usesRelPreloadData.title,
-  description: usesRelPreloadData.description,
-  score: usesRelPreloadData.score,
-  scoreDisplayMode: usesRelPreloadData.scoreDisplayMode,
-  displayValue: usesRelPreloadData.displayValue,
-  numericValue: usesRelPreloadData.numericValue,
-  numericUnit: usesRelPreloadData.numericUnit,
-  details: usesRelPreloadData.details,
-};
+// const usesRelPreload = {
+//   title: usesRelPreloadData.title,
+//   description: usesRelPreloadData.description,
+//   score: usesRelPreloadData.score,
+//   scoreDisplayMode: usesRelPreloadData.scoreDisplayMode,
+//   displayValue: usesRelPreloadData.displayValue,
+//   numericValue: usesRelPreloadData.numericValue,
+//   numericUnit: usesRelPreloadData.numericUnit,
+//   details: usesRelPreloadData.details,
+// };
 
-setUsesRelPreloadData(usesRelPreload);
+// setUsesRelPreloadData(usesRelPreload);
 
 // Display information for "efficient-animated-content"
 const efficientAnimatedContentData = lighthouseData.audits["efficient-animated-content"];
