@@ -10,14 +10,14 @@ const LayoutShiftElementsResults = ({ data }) => {
         <TableHead>
           <TableRow>
             <TableCell>Element</TableCell>
-            <TableCell>Weighted Score</TableCell>
+            <TableCell>Layout shift score</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data.details && data.details.items.map((item, index) => (
             <TableRow key={index}>
               <TableCell>{item.node && item.node.nodeLabel}</TableCell>
-              <TableCell>{item.score.toFixed(2)}</TableCell>
+              <TableCell>{item.score.toFixed(3)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

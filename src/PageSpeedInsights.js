@@ -26,7 +26,8 @@ import UsesPassiveEventListenersResults from './UsesPassiveEventListenersResults
 import UsesOptimizedImagesResults from './UsesOptimizedImagesResults';
 import TotalByteWeightResults from './TotalByteWeightResults';
 import LongTasksResults from './LongTasksResults';
-//import LayoutShiftElementsResults from './LayoutShiftElementsResults';
+import LayoutShiftElementsResults from './LayoutShiftElementsResults';
+import CriticalRequestChainsResults from './CriticalRequestChainsResults';
 import UserTimingsData from './UserTimingsData';
 import ServerResponseTimeData from './ServerResponseTimeData';
 import AvoidRedirectsResults from './AvoidRedirectsResults';
@@ -75,10 +76,10 @@ const PageSpeedInsights = () => {
   const [usesOptimizedImagesData, setUsesOptimizedImagesData] = useState({});
   const [totalByteWeightData, setTotalByteWeightData] = useState({});  
   const [longTasksData, setLongTasksData] = useState({});
-  //const [layoutShiftElementsData, setLayoutShiftElementsData] = useState({});
+  const [layoutShiftElementsData, setLayoutShiftElementsData] = useState({});
   const [userTimingsData, setUserTimingsData] = useState({});
   const [serverResponseTimeData, setServerResponseTimeData] = useState({});
-  //const [criticalRequestChainsData, setCriticalRequestChainsData] = useState({});
+  const [criticalRequestChainsData, setCriticalRequestChainsData] = useState({});
   const [avoidRedirectsData, setAvoidRedirectsData] = useState({});
   //const [usesRelPreloadData, setUsesRelPreloadData] = useState({});
   const [efficientAnimatedContentData, setEfficientAnimatedContentData] = useState({});
@@ -135,10 +136,10 @@ const PageSpeedInsights = () => {
     { Component: UsesOptimizedImagesResults, data: usesOptimizedImagesData, title: "Efficiently encode images", tags: []  },
     { Component: TotalByteWeightResults, data: totalByteWeightData, title: "Avoid enormous network payloads", tags: ["LCP"]  },
     { Component: LongTasksResults, data: longTasksData, title: "Avoid long main-thread tasks", tags: ["TBT"]  },
-    //{ Component: LayoutShiftElementsResults, data: layoutShiftElementsData, title: "Avoid large layout shifts" , tags: ["CLS"] },
+    { Component: LayoutShiftElementsResults, data: layoutShiftElementsData, title: "Avoid large layout shifts" , tags: ["CLS"] },
     { Component: UserTimingsData, data: userTimingsData, title: "User Timing marks and measures", tags: []  },
     { Component: ServerResponseTimeData, data: serverResponseTimeData, title: "Server Response Time", tags: ["FCP", "LCP"]  },
-    //{ data: criticalRequestChainsData, title: "Avoid chaining critical requests", tags: ["FCP", "LCP"] },
+    { Component: CriticalRequestChainsResults,data: criticalRequestChainsData, title: "Avoid chaining critical requests", tags: ["FCP", "LCP"] },
     { Component: AvoidRedirectsResults, data: avoidRedirectsData, title: "Avoid multiple page redirects", tags: ["FCP", "LCP"] },
     //{ Component: UsesRelPreloadResults, data: usesRelPreloadData, title: "Preload key requests", tags: ["FCP", "LCP"]  },
     { Component: EfficientAnimatedContentResults, data: efficientAnimatedContentData, title: "Use video formats for animated content", tags: ["LCP"]  },
@@ -643,23 +644,23 @@ setLongTasksData(longTasks);
 
 
 // Display information for "layout-shift-elements"
-// const layoutShiftElementsData = lighthouseData.audits["layout-shift-elements"];
-// console.log(layoutShiftElementsData);
+const layoutShiftElementsData = lighthouseData.audits["layout-shifts"];
+console.log(layoutShiftElementsData);
 
 // Extract information from layout-shift-elements
-// const layoutShiftElements = {
-//   title: layoutShiftElementsData.title,
-//   description: layoutShiftElementsData.description,
-//   score: layoutShiftElementsData.score,
-//   scoreDisplayMode: layoutShiftElementsData.scoreDisplayMode,
-//   displayValue: layoutShiftElementsData.displayValue,
-//   numericValue: layoutShiftElementsData.numericValue,
-//   numericUnit: layoutShiftElementsData.numericUnit,
-//   details: layoutShiftElementsData.details,
-// };
+const layoutShiftElements = {
+  title: layoutShiftElementsData.title,
+  description: layoutShiftElementsData.description,
+  score: layoutShiftElementsData.score,
+  scoreDisplayMode: layoutShiftElementsData.scoreDisplayMode,
+  displayValue: layoutShiftElementsData.displayValue,
+  numericValue: layoutShiftElementsData.numericValue,
+  numericUnit: layoutShiftElementsData.numericUnit,
+  details: layoutShiftElementsData.details,
+};
 
 
-// setLayoutShiftElementsData(layoutShiftElements);
+setLayoutShiftElementsData(layoutShiftElements);
 
 
 // Display information for "user-timings"
@@ -700,20 +701,20 @@ setServerResponseTimeData(serverResponseTime);
 
 
 // Display information for "critical-request-chains"
-// const criticalRequestChainsData = lighthouseData.audits["critical-request-chains"];
-// console.log(criticalRequestChainsData);
+const criticalRequestChainsData = lighthouseData.audits["critical-request-chains"];
+console.log(criticalRequestChainsData);
 
 // Extract information from critical-request-chains
-// const criticalRequestChains = {
-//   title: criticalRequestChainsData.title,
-//   description: criticalRequestChainsData.description,
-//   score: criticalRequestChainsData.score,
-//   scoreDisplayMode: criticalRequestChainsData.scoreDisplayMode,
-//   displayValue: criticalRequestChainsData.displayValue,
-//   details: criticalRequestChainsData.details,
-// };
+const criticalRequestChains = {
+  title: criticalRequestChainsData.title,
+  description: criticalRequestChainsData.description,
+  score: criticalRequestChainsData.score,
+  scoreDisplayMode: criticalRequestChainsData.scoreDisplayMode,
+  displayValue: criticalRequestChainsData.displayValue,
+  details: criticalRequestChainsData.details,
+};
 
-// setCriticalRequestChainsData(criticalRequestChains);
+setCriticalRequestChainsData(criticalRequestChains);
 
 
 
